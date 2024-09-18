@@ -1,5 +1,5 @@
-<!--<script setup lang="ts">
-const { onLoaded } = useScript('https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js')
+<script setup lang="ts">
+
 
 const onInitStars = () => {
   particlesJS('.particles-js', {
@@ -76,7 +76,7 @@ onLoaded(() => {
   })
 })
 </script>
--->
+
 <template>
   <div>
     <!-- -->
@@ -87,7 +87,7 @@ onLoaded(() => {
    
   </div>
 </template>
-<!--
+
 <style scoped>
 .particles-js {
   width: 100vw;
@@ -95,4 +95,4 @@ onLoaded(() => {
   pointer-events: none;
 }
 </style>
--->
+
