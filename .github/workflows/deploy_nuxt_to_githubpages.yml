@@ -17,7 +17,7 @@ jobs:
       - run: npm install
       - run: NUXT_APP_BASE_URL=/ npx nuxt build --preset github_pages
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./.output/public
   # Deployment job
@@ -37,4 +37,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
