@@ -83,7 +83,7 @@ onLoaded(() => {
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
     -->
-    <div id="particles-js" />
+    <div id="particles-js"></div>
   </div>
 </template>
 
