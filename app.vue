@@ -1,8 +1,8 @@
-<script setup lang="ts">
+<!--<script setup lang="ts">
 const { onLoaded } = useScript('https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js')
 
 const onInitStars = () => {
-  particlesJS('#particles-js', {
+  particlesJS('.particles-js', {
     particles: {
       number: {
         value: 500,
@@ -76,22 +76,23 @@ onLoaded(() => {
   })
 })
 </script>
-
+-->
 <template>
   <div>
     <!-- -->
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
     
-    <div id="particles-js"></div>
+    <div class="particles-js"></div>
    
   </div>
 </template>
-
+<!--
 <style scoped>
-#particles-js {
+.particles-js {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
 }
 </style>
+-->
