@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "nuxt": "^3.13.0",
+    "nuxt-particles": "^0.3.0",
     "vue": "latest",
     "vue-router": "latest"
   }
