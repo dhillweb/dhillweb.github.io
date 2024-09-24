@@ -16,7 +16,7 @@ const options = {
     zIndex: -10
   },
   background: {
-    color: ""
+    color: "#000"
   },
   interactivity: {
     events: {
@@ -44,7 +44,7 @@ const options = {
     }
   },
   particles: {
-    color: { value: "#ffffff" },
+    color: { value: "#fff" },
     move: {
       direction: "none",
       enable: true,
