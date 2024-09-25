@@ -1,77 +1,42 @@
 <template>
   <div>
     <NuxtParticles id="tsparticles" :options="options" @load="onLoad" />
-
-
+    <!-- <div style="height: 10rem; width: 30rem; background-color: chocolate; margin-left: auto; margin-right: auto;">
+    </div> -->
   </div>
 </template>
 
 <script setup lang="ts">
 
-import type { Container } from 'tsparticles'
+import type { ISourceOptions, Container } from "@tsparticles/engine";
 
-const options = {
-  fullScreen: {
-    enable: true,
-    zIndex: -10
-  },
-  background: {
-    color: "#000"
-  },
-  interactivity: {
-    events: {
-      onClick: {
-        enable: true,
-        mode: "repulse"
-      },
-      onHover: {
-        enable: true,
-        mode: "bubble"
-      }
-    },
-    modes: {
-      bubble: {
-        distance: 200,
-        duration: 2,
-        opacity: 0,
-        size: 0,
-        speed: 3
-      },
-      repulse: {
-        distance: 400,
-        duration: 0.4
-      }
-    }
-  },
+const options: ISourceOptions = {
+  fpsLimit: 120,
   particles: {
-    color: { value: "#fff" },
-    move: {
-      direction: "none",
-      enable: true,
-      outModes: "out",
-      random: true,
-      speed: 0.3
+    color: {
+      value: ["#BE1F00", "#14000A", "#FF009A", "#BDE8FF", "#5C4991"]
     },
     number: {
-      density: {
-        enable: true
-      },
-      value: 600
-    },
-    opacity: {
-      animation: {
-        enable: true,
-        speed: 5
-      },
-      value: { min: 0.3, max: 0.6 }
+      value: 50
     },
     shape: {
       type: "circle"
     },
-    size: {
+    opacity: {
       value: 1
+    },
+    size: {
+      value: 400
+    },
+    move: {
+      enable: true,
+      speed: 10,
     }
-  }
+  },
+  style: {
+    filter: "blur(100px)"
+  },
+  detectRetina: true,
 }
 
 const onLoad = (container: Container) => {
@@ -80,3 +45,11 @@ const onLoad = (container: Container) => {
   setTimeout(() => container.play(), 2000)
 }
 </script>
+<style>
+#tsparticles {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  z-index: -10;
+}
+</style>
