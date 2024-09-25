@@ -3,6 +3,7 @@
     <NuxtParticles id="tsparticles" :options="options" />
     <div class="wrapper">
       <div class="card">
+
       </div>
     </div>
   </div>
@@ -57,20 +58,7 @@ if (import.meta.client) {
   z-index: -10;
 }
 
-.wrapper {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.card {
-  height: 10rem;
-  width: 30rem;
-  background-color: rgba(255, 255, 255, 0.65);
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
+body {
+  margin: 0;
 }
 </style>
