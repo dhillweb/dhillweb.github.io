@@ -1,16 +1,17 @@
 <template>
   <div>
-    <NuxtParticles id="tsparticles" :options="options" @load="onLoad" />
-    <!-- <div style="height: 10rem; width: 30rem; background-color: chocolate; margin-left: auto; margin-right: auto;">
-    </div> -->
+    <NuxtParticles id="tsparticles" :options="options" />
+    <div class="wrapper">
+      <div class="card">
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 
-import type { ISourceOptions, Container } from "@tsparticles/engine";
+const options = {
 
-const options: ISourceOptions = {
   fpsLimit: 120,
   particles: {
     color: {
@@ -34,20 +35,42 @@ const options: ISourceOptions = {
     }
   },
   style: {
-    filter: "blur(100px)"
+    filter: "blur(150px)"
   },
   detectRetina: true,
 }
 
-const onLoad = (container: Container) => {
-  // Do something with the container
-  container.pause()
-  setTimeout(() => container.play(), 2000)
+const updateParticleNumber = () => {
+  if (import.meta.client) {
+    const particleNumber = window.innerWidth < 640 ? 60 : 120;
+    options.particles.number.value = particleNumber;
+  }
+}
+if (import.meta.client) {
+  window.addEventListener("resize", updateParticleNumber);
+  updateParticleNumber();
 }
 </script>
 <style>
 #tsparticles {
   position: fixed;
   z-index: -10;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card {
+  height: 10rem;
+  width: 30rem;
+  background-color: rgba(255, 255, 255, 0.65);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
 }
 </style>
