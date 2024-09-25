@@ -48,8 +48,6 @@ const onLoad = (container: Container) => {
 <style>
 #tsparticles {
   position: fixed;
-  width: 100vw;
-  height: 100vw;
   z-index: -10;
 }
 </style>
